@@ -1,0 +1,51 @@
+.v-text-field {
+
+  &--outline .v-input__slot {
+    border: 2px solid transparent !important;
+    background-color: rgba(0, 0, 0, .06) !important;
+  }
+
+  &.v-input--is-focused,
+  &.v-input--is-dirty[aria-invalid="false"] {
+
+    .v-input__slot,
+    .v-input__slot[value] {
+      background-color: #ffffff !important; // box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+      box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
+    }
+  }
+}
+
+
+.v-input.v-input--selection-controls {
+
+  &.v-input--checkbox {
+    border-radius: 4px;
+    background-color: transparent;
+    margin-top: 0;
+    padding-top: 14px;
+    padding-left: 5px;
+
+    .v-input__slot {
+      margin-bottom: 0;
+    }
+
+    &.v-input--is-dirty {
+      background-color: #fff;
+      box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
+    }
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 0;
+  -webkit-text-fill-color: black;
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  transition: background-color 5000s ease-in-out 0s;
+}

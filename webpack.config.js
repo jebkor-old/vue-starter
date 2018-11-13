@@ -1,42 +1,56 @@
-const webpack = require("webpack")
-const path = require("path")
-const merge = require("webpack-merge")
-const { VueLoaderPlugin } = require("vue-loader")
+const webpack = require('webpack');
+const path = require('path');
+
+const loaders = require('./webpack/loaders'); // Seperate file with all of the loaders
+const plugins = require('./webpack/plugins'); // Seperate file with all of the plugins
+
+
+if (process.env.NODE_ENV === 'test'){
+
+  module.exports.externals = [require('webpack-node-externals')()]
+  module.exports.devtool = 'inline-cheap-module-source-map'
+
+}
+
 
 module.exports = {
   entry: {
-        initializer: ["./src/js/initializer.js"],
-        index: ["./src/js/views/index.js"]
+    main: [
+      './src/scss/all.scss',
+      './src/js/index.js' // main javascript/ts
+    ]
   },
   module: {
-    rules: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      loader: "babel-loader"
-    }, {
-      test: /\.vue$/,
-      loader: "vue-loader",
-      options: {
-        loaders: {
-          scss: "style-loader!css-loader!sass-loader",
-          js: "babel-loader",
-          css: "style-loader!css-loader"
-        }
-      }
-    }, {
-      test: /\.scss$/,
-      loader: "style-loader!css-loader!sass-loader"
-    }]
+    rules: [
+      loaders.FileLoader,
+      loaders.CssLoader,
+      loaders.ScssLoader,
+      loaders.StylusLoader,
+      loaders.JSLoader,
+      // loaders.TSLoader,
+      loaders.VueLoader
+    ]
   },
   resolve: {
-    extensions: [".html", ".js", ".vue"],
+    extensions: ['.html', '.scss', '.css', '.js', '.vue', '.ts'],
     alias: {
-      vue$: "vue/dist/vue.esm.js",
-      Vue$: "vue/dist/vue.esm.js"
+      vue$: 'vue/dist/vue.esm.js',
+      Vue$: 'vue/dist/vue.esm.js',
+      '@root': path.resolve('./src'),
+      '@declarations': path.resolve('./src/ts/declarations'),
+      '@models': path.resolve('./src/ts/model'),
+      '@services': path.resolve('./src/ts/services'),
+      '@types': path.resolve('./src/ts/types'),
+      '@utilities': path.resolve('./src/ts/utilities'),
+      '@vendor': path.resolve('./src/ts/vendor'),
+      '@vue': path.resolve('./src/ts/vue')
     }
   },
   plugins: [
-    new VueLoaderPlugin()
+    plugins.VueLoaderPlugin,
+    plugins.StyleLintPlugin,
+    plugins.MiniExtractPlugin,
+    plugins.VuetifyLoaderPlugin
   ],
   optimization: {
     splitChunks: {
@@ -50,4 +64,4 @@ module.exports = {
       }
     }
   }
-}
+};

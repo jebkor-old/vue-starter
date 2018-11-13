@@ -1,0 +1,25 @@
+.grid-container {
+  
+  .user-profile {
+    background-color: randomColor(random, yellow);
+    display: grid;
+    max-width: 400px;
+    grid-template-areas: "avatar" "name" "bio";
+
+    @include screen(map-get($bps, xs ), max) {
+      grid-template-areas: "name" "avatar" "bio";
+    }
+
+    &__username {
+      grid-area: name;
+    }
+
+    &__avatar {
+      grid-area: avatar;
+    }
+
+    &__bio {
+      grid-area: bio;
+    }
+  }
+}

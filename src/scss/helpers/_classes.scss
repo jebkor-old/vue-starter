@@ -1,0 +1,21 @@
+[v-cloak] {
+  display: none !important;
+}
+
+$duration: .5s;
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity $duration;
+  margin: -8px !important; // We use -12 because of grid-list-xl. Other gridlist sizes will change this value
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+  margin: -8px !important;
+}
+
+.custom-elevation {
+  box-shadow: 0 6px 18px 0 rgba(0, 0, 0, .11);
+}

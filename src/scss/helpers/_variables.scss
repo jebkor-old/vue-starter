@@ -1,0 +1,64 @@
+@import "vuetify-theme";
+
+$color-shade-amount: 15%;
+$color-trans-amount: .5;
+
+
+$colors: (
+  primary: (
+    base: $color-primary,
+    light: lighten($color-primary, $color-shade-amount),
+    dark: darken($color-primary, $color-shade-amount),
+    trans: transparentize($color-primary, $color-trans-amount)
+  ),
+  secondary: (
+    base: $color-secondary,
+    light: lighten($color-secondary, $color-shade-amount),
+    dark: darken($color-secondary, $color-shade-amount),
+    trans: transparentize($color-secondary, $color-trans-amount)
+  ),
+  accent: (
+    base: $color-accent,
+    light: lighten($color-accent, $color-shade-amount),
+    dark: darken($color-accent, $color-shade-amount),
+    trans: transparentize($color-accent, $color-trans-amount)
+  ),
+  info: (
+    base: $color-info,
+    light: lighten($color-info, $color-shade-amount),
+    dark: darken($color-info, $color-shade-amount),
+    transparent: transparentize($color-info, $color-trans-amount)
+  ),
+  success: (
+    base: $color-success,
+    light: lighten($color-success, $color-shade-amount),
+    dark: darken($color-success, $color-shade-amount),
+    transparent: transparentize($color-success, $color-trans-amount)
+  ),
+  warning: (
+    base: $color-warning,
+    light: lighten($color-warning, $color-shade-amount),
+    dark: darken($color-warning, $color-shade-amount),
+    transparent: transparentize($color-warning, $color-trans-amount)
+  ),
+  error: (
+    base: $color-error,
+    light: lighten($color-error, $color-shade-amount),
+    dark: darken($color-error, $color-shade-amount),
+    transparent: transparentize($color-error, $color-trans-amount)
+  ),
+  greyscale: (
+    black: rgba(0, 0, 0, .87),
+    dark-grey: rgba(0, 0, 0, .54),
+    grey: rgba(0, 0, 0, .38),
+    light-grey: rgba(0, 0, 0, .11),
+    white: rgba(255, 255, 255, 1)
+  )
+);
+
+$bps: (
+  xs: 600px,
+  sm: 960px,
+  md: 1264px,
+  lg: 1904px
+);

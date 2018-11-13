@@ -1,0 +1,19 @@
+{
+  "short_name": "Vue SPA",
+  "name": "Vue SPA Starter",
+  "icons": [{
+    "src": "/dist/images/logo-192.png",
+    "type": "image/png",
+    "sizes": "192x192"
+  },
+  {
+    "src": "/dist/images/logo-512.png",
+    "type": "image/png",
+    "sizes": "512x512"
+  }],
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff"
+}
