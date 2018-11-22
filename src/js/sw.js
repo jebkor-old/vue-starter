@@ -13,8 +13,9 @@ var networkFirstFiles = [
   './dist/main.css',
   './dist/vendor.css',
   './dist/main.min.js',
-  './dist/2.min.js',
   './dist/vendor.min.js',
+  './dist/views/frontpage/index.min.js',
+  './dist/views/about/index.min.js',
   './manifest.json'
 ];
 

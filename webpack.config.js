@@ -18,7 +18,9 @@ module.exports = {
     main: [
       './src/scss/all.scss',
       './src/js/index.js' // main javascript/ts
-    ]
+    ],
+    'views/frontpage': ['./src/js/views/frontpage/index.js'],
+    'views/about': ['./src/js/views/about/index.js']
   },
   module: {
     rules: [

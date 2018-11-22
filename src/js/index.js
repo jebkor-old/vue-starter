@@ -9,7 +9,6 @@ import Vue from 'vue';
 import 'vuetify/src/stylus/app.styl';
 import Vuetify from 'vuetify/lib';
 
-import VueRouter from 'vue-router';
 import VueMeta from 'vue-meta';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCoffee, faCog, faFile, faDungeon } from '@fortawesome/free-solid-svg-icons';
@@ -27,7 +26,6 @@ library.add(
   faFile, 
   faVuejs
 );
-Vue.use(VueRouter);
 Vue.use(VueMeta);
 Vue.use(Vuetify, {
   theme: {
@@ -45,9 +43,6 @@ Vue.use(Vuetify, {
 
 
 // import files
-import router from '../vue/router/Routes';
-import store from "../vue/store/Store";
-import App from '../vue/App.vue';
 
 
 
@@ -57,11 +52,11 @@ Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 
 // create SPA instance
-const VueApp = new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app');
+// const VueApp = new Vue({
+//   router,
+//   store,
+//   render: h => h(App)
+// }).$mount('#app');
 
 
 
