@@ -1,4 +1,4 @@
-const VERSION = '1.2.13::';
+const VERSION = '1.2.14::';
 
 var cacheFirstFiles = [
   // ADDME: Add paths and URLs to pull from cache first if it has been loaded before. Else fetch from network.
@@ -13,8 +13,9 @@ var networkFirstFiles = [
   './dist/main.css',
   './dist/vendor.css',
   './dist/main.min.js',
-  './dist/2.min.js',
   './dist/vendor.min.js',
+  './dist/views/frontpage/index.min.js',
+  './dist/views/about/index.min.js',
   './manifest.json'
 ];
 
@@ -64,7 +65,7 @@ self.addEventListener('fetch', event => {
 // // Names of the two caches used in this version of the service worker.
 // // Change to v2, etc. when you update any of the local resources, which will
 // // in turn trigger the install event again.
-// const PRECACHE = '1.2.13::';
+// const PRECACHE = '1.2.14::';
 // const RUNTIME = 'runtime';
 
 // // A list of local resources we always want to be cached.
@@ -120,7 +121,7 @@ self.addEventListener('fetch', event => {
 
 // // console.log('WORKER: executing.');
 
-// // var version = '1.2.13::';
+// // var version = '1.2.14::';
 
 // // var offlineFundamentals = ['', 'dist/'];
 
